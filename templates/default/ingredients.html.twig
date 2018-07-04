@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+pizza
+test page
+
+
+<ul>
+
+{% for ingredient in ingredients %}
+
+<li> {{ [ingredient.name,   ingredient.id]|join }}</li>
+
+
+{% endfor %}
+
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pizza</title>
+    <link rel="stylesheet" href="{{ asset('dist/css/bootstrap.min.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css" />
+    <link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon" />
+</head>
+<body>
+{% block body %}
+    <header>
+        <h1>Pizza</h1>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-contents">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('home') }}"><i class="glyphicon glyphicon-home"></i> Présentation</a></li>
+                    <li><a href="{{ path('pizzas_list') }}"><i class="glyphicon glyphicon-list"></i>Les pizzas</a></li>
+                   <li><a href="{{ path('ingredients_list') }}"><i class="glyphicon glyphicon-list"></i>Les Ingredients</a></li>
+
+                   <li><a href="{{ path('addpizza') }}"><i class="glyphicon glyphicon-list"></i>Ajouter Pizza</a></li>
+
+                     <li><a href="{{ path('commande') }}"><i class="glyphicon glyphicon-usd"></i>Afficher Commander</a></li>
+                   
+                     <li><a href="{{ path('addcom') }}"><i class="glyphicon glyphicon-usd"></i>Ajouter Commander</a></li>
+                   
+                     </ul>
+                      <div class="navbar-login">
+                         <form method="post" action="{{ path('login') }}">
+                            <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" name="_username" />
+                            </div>
+                            <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" name="_password" />
+                          </div>
+                        <input type="submit" class="btn btn-primary" />
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section>
+        <article>
+         {% block content %}{% endblock %}
+        </article>
+    </section>
+    {% endblock %}
+</body>
